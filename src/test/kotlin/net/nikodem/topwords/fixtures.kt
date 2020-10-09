@@ -111,23 +111,108 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
 }
 """
 
-val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """{
-    "topWords":[
-              {
-         "word":"knowledge",
-         "occurrences":3
+val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """
+{
+   "topWords":[
+      {
+         "word":"people",
+         "occurrences":182
       },
       {
-         "word":"learning",
-         "occurrences":3
+         "word":"\"https",
+         "occurrences":118
       },
       {
-         "word":"internet",
-         "occurrences":3
+         "word":"time",
+         "occurrences":112
       },
       {
-         "word":"building",
-         "occurrences":3
+         "word":"code",
+         "occurrences":52
+      },
+      {
+         "word":"en",
+         "occurrences":51
+      },
+      {
+         "word":"\"",
+         "occurrences":51
+      },
+      {
+         "word":"companies",
+         "occurrences":50
+      },
+      {
+         "word":"lot",
+         "occurrences":50
+      },
+      {
+         "word":")",
+         "occurrences":49
+      },
+      {
+         "word":"wikipedia",
+         "occurrences":47
+      },
+      {
+         "word":"wiki",
+         "occurrences":47
+      },
+      {
+         "word":"apple",
+         "occurrences":45
+      },
+      {
+         "word":"app",
+         "occurrences":43
+      },
+      {
+         "word":"article",
+         "occurrences":42
+      },
+      {
+         "word":"data",
+         "occurrences":42
+      },
+      {
+         "word":"pay",
+         "occurrences":42
+      },
+      {
+         "word":"software",
+         "occurrences":38
+      },
+      {
+         "word":"github",
+         "occurrences":38
+      },
+      {
+         "word":"hydrogen",
+         "occurrences":37
+      },
+      {
+         "word":"science",
+         "occurrences":37
+      },
+      {
+         "word":"company",
+         "occurrences":36
+      },
+      {
+         "word":"based",
+         "occurrences":35
+      },
+      {
+         "word":"read",
+         "occurrences":35
+      },
+      {
+         "word":"bad",
+         "occurrences":35
+      },
+      {
+         "word":"energy",
+         "occurrences":34
       }
    ]
 }"""
