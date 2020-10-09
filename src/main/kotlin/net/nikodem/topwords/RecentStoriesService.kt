@@ -1,15 +1,16 @@
 package net.nikodem.topwords
 
+import net.nikodem.topwords.hackerNewsApi.RecentStoriesIdsApi
 import net.nikodem.topwords.stopwords.STOP_WORDS
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 import java.lang.Exception
 
 @Service
-class RecentStoriesService(private val restTemplate: RestTemplate) {
+class RecentStoriesService(private val restTemplate: RestTemplate, private val recentStoriesApi: RecentStoriesIdsApi) {
 
-    fun findTopWords(): Any {
-        val recentStoriesIds = fetchRecentStoriesIds()
+    fun findTopWords(): List<TopWord> {
+        return fetchRecentStoriesIds()
                 .take(250)
                 .map { fetchTitle(it) }
                 .flatMap { splitToNormalizedWords(it) }
@@ -20,8 +21,6 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
                 .sortedByDescending { it.word.length }
                 .sortedByDescending { it.occurrences }
                 .take(25)
-
-        return recentStoriesIds
     }
 
     fun splitToNormalizedWords(text: String): List<String> {
@@ -42,12 +41,7 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
 
 
     fun fetchRecentStoriesIds(): List<Long> {
-        val ids = restTemplate.getForObject(
-                "https://hacker-news.firebaseio.com/v0/newstories.json",
-                List::class.java
-        ) as List<Long>
-        println(ids)
-        return ids
+        return recentStoriesApi.fetchRecentStoriesIds()
     }
 
     fun fetchTitle(itemId: Long): String {
@@ -63,10 +57,4 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
             val id: Long,
             val title: String
     )
-
-    data class TopWord(
-            val word: String,
-            val occurrences: Int
-    )
-
 }
