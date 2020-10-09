@@ -4,9 +4,9 @@
 * ~~pass manual test~~
 * ~~pass acceptance test with mocked most recent stories~~
 ### make it fast
-* implement call parallelism - think through various approaches, 
-    will be influenced by Historical top words 
-* performance metrics
+* ~~implement call parallelism - think through various approaches, 
+    will be influenced by Historical top words~~
+* 3 minutes 30 seconds -> 30 seconds
 ### make it pretty
 
 
@@ -16,7 +16,7 @@
 * ~~added HTML escaping~~
 * ~~add new stopwords and separators mostly related to HTML and url links.~~
 * ~~passing acceptance test~~
-* parallelize HN item retrieval
+* ~~parallelize HN item retrieval~~ 11:30 seconds -> 2 minutes 32 seconds
 
 
 

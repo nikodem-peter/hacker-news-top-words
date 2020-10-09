@@ -16,11 +16,15 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
          "occurrences":6
       },
       {
+         "word":"code",
+         "occurrences":6
+      },
+      {
          "word":"game",
          "occurrences":5
       },
       {
-         "word":"code",
+         "word":"2",
          "occurrences":5
       },
       {
@@ -72,6 +76,10 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
          "occurrences":4
       },
       {
+         "word":"tech",
+         "occurrences":4
+      },
+      {
          "word":"age",
          "occurrences":4
       },
@@ -81,10 +89,6 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
       },
       {
          "word":"bug",
-         "occurrences":4
-      },
-      {
-         "word":"2",
          "occurrences":4
       },
       {
@@ -102,14 +106,12 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
       {
          "word":"internet",
          "occurrences":3
-      },
-      {
-         "word":"building",
-         "occurrences":3
       }
    ]
 }
 """
+
+
 
 val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """
 {
