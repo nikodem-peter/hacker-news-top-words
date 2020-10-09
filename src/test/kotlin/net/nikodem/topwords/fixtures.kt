@@ -219,10 +219,48 @@ val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """
 }"""
 
 val EXPECTED_TOP_KARMA_WORDS = """
-    {
-        "topWords":[{
-            "word":"hello",
-            "karma":34534
-        }]
-    }
+{
+   "topWords":[
+      {
+         "word":"software",
+         "karma":104283
+      },
+      {
+         "word":"language",
+         "karma":100600
+      },
+      {
+         "word":"driver",
+         "karma":95020
+      },
+      {
+         "word":"libraries",
+         "karma":94830
+      },
+      {
+         "word":"discovermagazine",
+         "karma":94786
+      },
+      {
+         "word":"psychological",
+         "karma":94786
+      },
+      {
+         "word":"conspiracy",
+         "karma":94786
+      },
+      {
+         "word":"theorists\"",
+         "karma":94786
+      },
+      {
+         "word":"pandemic",
+         "karma":94786
+      },
+      {
+         "word":"primary",
+         "karma":94786
+      }
+   ]
+}
 """.trimIndent()

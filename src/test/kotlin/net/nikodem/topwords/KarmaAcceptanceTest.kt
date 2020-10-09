@@ -23,15 +23,15 @@ class KarmaAcceptanceTest {
     private lateinit var idsApi: ItemIdsApi
 
     @Test()
-    fun `Returns top 25 words from historical comments among 1000 most recent HN posts in descending order`() {
+    fun `Returns top 10 words from recent HN comments among by commentors with greatest Karma in descending order`() {
         whenever(idsApi.fetchMaxItemId()).thenReturn(MOCKED_MAX_ITEM_ID)
 
-        mvc.get("/v1/topkarmawords")
+        mvc.get("/v1/topwords/karma")
                 .andExpect {
                     status { isOk }
-                    content {
-                        json(EXPECTED_TOP_KARMA_WORDS)
-                    }
+                    content { json(EXPECTED_TOP_KARMA_WORDS) }
                 }
+
+        // I was not able to figure out how to mock user's karma efficiently so the test is completely unstable
     }
 }
