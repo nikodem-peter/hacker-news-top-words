@@ -1,6 +1,11 @@
 package net.nikodem.topwords.stopwords
 
 val STOP_WORDS = setOf(
+        //my additions
+        "href",
+        "nofollow",
+        "https",
+        //
         "10",
         "39",
         "﻿a",

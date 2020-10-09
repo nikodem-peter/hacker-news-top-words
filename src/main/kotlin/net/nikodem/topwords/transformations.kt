@@ -13,6 +13,10 @@ fun splitToNormalizedWords(text: String): List<String> = text
                 ";",
                 ":",
                 "–",
+                "<",
+                ">",
+                "=",
+                "\\",
                 "\t",
                 "\n",
                 " ")
