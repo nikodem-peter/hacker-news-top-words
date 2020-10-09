@@ -8,11 +8,9 @@ import org.springframework.web.client.RestTemplate
 class ItemDetailApi(private val restTemplate: RestTemplate) {
 
     fun fetchItemDetail(itemId: Long): HnItem {
-        val item = restTemplate.getForObject(
+        return restTemplate.getForObject(
                 "https://hacker-news.firebaseio.com/v0/item/${itemId}.json",
                 HnItem::class.java
-        )
-        println(item)
-        return item ?: throw Exception()
+        ) ?: throw Exception()
     }
 }

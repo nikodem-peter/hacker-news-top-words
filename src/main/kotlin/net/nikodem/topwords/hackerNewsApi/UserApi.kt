@@ -8,14 +8,10 @@ import org.springframework.web.client.RestTemplate
 class UserApi(private val restTemplate: RestTemplate) {
 
     fun fetchUserDetail(userId: String): HnUser {
-        println(userId)
-
-        val item = restTemplate.getForObject(
+        return restTemplate.getForObject(
                 "https://hacker-news.firebaseio.com/v0/user/${userId}.json",
                 HnUser::class.java
-        )
-        println(item)
-        return item ?: throw Exception()
+        ) ?: throw Exception()
     }
 
 }

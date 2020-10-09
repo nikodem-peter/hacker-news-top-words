@@ -7,20 +7,16 @@ import org.springframework.web.client.RestTemplate
 class ItemIdsApi(private val restTemplate: RestTemplate) {
 
     fun fetchRecentStoryIds(): List<Long> {
-        val ids = restTemplate.getForObject(
+        return restTemplate.getForObject(
                 "https://hacker-news.firebaseio.com/v0/newstories.json",
                 List::class.java
         ) as List<Long>
-        println(ids)
-        return ids
     }
 
     fun fetchMaxItemId(): Long {
-        val maxId = restTemplate.getForObject(
+        return restTemplate.getForObject(
                 "https://hacker-news.firebaseio.com/v0/maxitem.json",
                 Long::class.java
         ) ?: throw Exception()
-        println(maxId)
-        return maxId
     }
 }
