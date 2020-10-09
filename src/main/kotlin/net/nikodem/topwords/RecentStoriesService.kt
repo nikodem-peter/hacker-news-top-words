@@ -17,6 +17,7 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
                 .groupingBy { it }.eachCount()
                 .entries
                 .map { TopWord(word = it.key, occurrences = it.value) }
+                .sortedByDescending { it.word.length }
                 .sortedByDescending { it.occurrences }
                 .take(25)
 
