@@ -1,5 +1,14 @@
 recent stories
+    make it work
+        stop words
+        pass manual test
+        pass acceptance test with mocked most recent stories call
+    make it fast
+
+    make it pretty
+    stop words
     pass manual test
     pass acceptance test with mocked most recent stories call
+
 
 docker
