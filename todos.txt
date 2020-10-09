@@ -1,0 +1,5 @@
+recent stories
+    pass manual test
+    pass acceptance test with mocked most recent stories call
+
+docker
