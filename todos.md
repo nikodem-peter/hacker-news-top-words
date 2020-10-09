@@ -11,7 +11,13 @@
 
 
 # historical comments
+### make it work
+* explore askhn, showhn, jobs, new, best and top stories candidate eliminations - seems relatively ineffective
+* ~~added HTML escaping~~
+* add new stopwords and separators mostly related to HTML and url links.
 
+
+ 
 
 # docker
 

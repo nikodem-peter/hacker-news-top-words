@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.web.client.RestTemplate
 
 @SpringBootApplication
-class HackerNewsMuhammadLiApplication {
+class HackerNewsTopWordsApplication {
     @Bean
     fun restTemplate(): RestTemplate {
         return RestTemplate()
@@ -14,5 +14,5 @@ class HackerNewsMuhammadLiApplication {
 }
 
 fun main(args: Array<String>) {
-    runApplication<HackerNewsMuhammadLiApplication>(*args)
+    runApplication<HackerNewsTopWordsApplication>(*args)
 }
