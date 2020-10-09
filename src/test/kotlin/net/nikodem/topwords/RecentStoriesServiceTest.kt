@@ -11,12 +11,6 @@ class RecentStoriesServiceTest {
     lateinit var recentStoriesService: RecentStoriesService
 
     @Test
-    fun testFetchIds() {
-        val recentStories = recentStoriesService.fetchRecentStoriesIds()
-        println(recentStories)
-    }
-
-    @Test
     fun testFind() {
         val result = recentStoriesService.findTopWords()
         println(result)

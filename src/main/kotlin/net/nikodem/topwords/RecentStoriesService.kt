@@ -1,5 +1,6 @@
 package net.nikodem.topwords
 
+import net.nikodem.topwords.stopwords.STOP_WORDS
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
 import java.lang.Exception
@@ -9,9 +10,15 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
 
     fun findTopWords(): Any {
         val recentStoriesIds = fetchRecentStoriesIds()
-                .take(3)
+                .take(250)
                 .map { fetchTitle(it) }
                 .flatMap { splitToNormalizedWords(it) }
+                .filter { !STOP_WORDS.contains(it) }
+                .groupingBy { it }.eachCount()
+                .entries
+                .map { TopWord(word = it.key, occurrences = it.value) }
+                .sortedByDescending { it.occurrences }
+                .take(25)
 
         return recentStoriesIds
     }
@@ -24,6 +31,7 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
                 "!",
                 ";",
                 ":",
+                "–",
                 "\t",
                 "\n",
                 " ")
@@ -33,10 +41,12 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
 
 
     fun fetchRecentStoriesIds(): List<Long> {
-        return (restTemplate.getForObject(
+        val ids = restTemplate.getForObject(
                 "https://hacker-news.firebaseio.com/v0/newstories.json",
                 List::class.java
-        ) as List<Long>)
+        ) as List<Long>
+        println(ids)
+        return ids
     }
 
     fun fetchTitle(itemId: Long): String {
@@ -51,6 +61,11 @@ class RecentStoriesService(private val restTemplate: RestTemplate) {
     data class Item(
             val id: Long,
             val title: String
+    )
+
+    data class TopWord(
+            val word: String,
+            val occurrences: Int
     )
 
 }
