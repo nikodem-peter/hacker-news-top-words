@@ -112,7 +112,6 @@ val EXPECTED_TOP_WORDS_OF_RECENT_STORIES = """
 """
 
 
-
 val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """
 {
    "topWords":[
@@ -218,3 +217,12 @@ val EXPECTED_TOP_WORDS_OF_HISTORICAL_COMMENTS = """
       }
    ]
 }"""
+
+val EXPECTED_TOP_KARMA_WORDS = """
+    {
+        "topWords":[{
+            "word":"hello",
+            "karma":34534
+        }]
+    }
+""".trimIndent()

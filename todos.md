@@ -19,6 +19,9 @@
 * ~~parallelize HN item retrieval~~ 11:30 seconds -> 2 minutes 32 seconds
 
 
+# karma
+
+
 
  
 
