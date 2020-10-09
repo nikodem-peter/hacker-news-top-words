@@ -11,7 +11,7 @@ class HistoricalCommentsService(
         private val itemDetailApi: ItemDetailApi
 ) {
 
-    fun findTopWords(): Any {
+    fun findTopWords(): List<TopWord> {
         val candidateIds = getHistoricalCommentItemCandidates()
         val fetchedItems = candidateIds.map { fetchItem(it) }
         val cleanedWords = fetchedItems
@@ -42,7 +42,7 @@ class HistoricalCommentsService(
 
     private fun getHistoricalCommentItemCandidates(): List<Long> {
         val maxId = itemIdsApi.fetchMaxItemId()
-        return (maxId downTo (maxId - 100)).toList()
+        return (maxId downTo (maxId - 1000)).toList()
     }
 
     private fun fetchItem(itemId: Long) = itemDetailApi.fetchItemDetail(itemId)

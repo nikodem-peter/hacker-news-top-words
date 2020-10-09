@@ -14,5 +14,10 @@ class TopWordsController(
         return TopWordsResponse(topWords = recentStoriesService.findTopWords())
     }
 
+    @GetMapping("/v1/topwords/historicalcomments")
+    fun getTopWordsFromHistoricalComments(): TopWordsResponse {
+        return TopWordsResponse(topWords = historicalCommentsService.findTopWords())
+    }
+
 
 }
